@@ -10,7 +10,7 @@ from io import BytesIO
 st.title("USPTO Trademark Data via TSDR API")
 
 # 🔑 API Key Input
-api_key = st.text_input("Enter your USPTO API Key:", type="password")
+api_key = st.secrets["API_KEY"]
 
 # 📥 Serial Numbers Input
 app_numbers_input = st.text_area("Enter Serial Numbers (comma-separated):", "97439760,77434372")
