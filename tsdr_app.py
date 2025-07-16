@@ -6,15 +6,11 @@ from io import BytesIO
 # 🚧 Maintenance mode switch
 MAINTENANCE_MODE = False
 
-<<<<<<< HEAD
 if MAINTENANCE_MODE:
     st.set_page_config(layout="wide")
     st.warning("🛠 App is under maintenance. Please check back later.")
     st.stop()
-
-=======
     
->>>>>>> a06a70bbd1f87f6f5f5f6e32992b5834a84af1e3
 st.set_page_config(layout="wide")
 
 
