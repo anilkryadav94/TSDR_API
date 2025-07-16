@@ -3,8 +3,7 @@ import requests
 import xml.etree.ElementTree as ET
 import pandas as pd
 from io import BytesIO
-import os
-os.system("streamlit run tsdr_app.py")
+
 
 
 # Streamlit UI
