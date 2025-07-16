@@ -4,6 +4,36 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 from io import BytesIO
 
+import streamlit as st
+
+# Load usernames and passwords from Streamlit secrets
+AUTH_USERS = st.secrets["credentials"]
+
+# Session state to track login
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+# Login UI
+if not st.session_state.logged_in:
+    st.title("🔒 Login Required")
+
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if username in AUTH_USERS and AUTH_USERS[username] == password:
+            st.session_state.logged_in = True
+            st.success("✅ Login successful!")
+            st.experimental_rerun()
+        else:
+            st.error("❌ Invalid username or password")
+
+else:
+    st.success(f"✅ Welcome, {username}!")
+    # 👉 Continue with rest of your app
+    # For example:
+    st.title("USPTO TSDR Data Tool")
+    # ... your original app code here ...
 
 
 # Streamlit UI
