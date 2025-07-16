@@ -3,7 +3,13 @@ import requests
 import xml.etree.ElementTree as ET
 import pandas as pd
 from io import BytesIO
+# 🚧 Maintenance mode switch
+MAINTENANCE_MODE = False
 
+if MAINTENANCE_MODE:
+    st.set_page_config(layout="wide")
+    st.warning("🛠 App is under maintenance. Please check back later.")
+    st.stop()
 
 st.set_page_config(layout="wide")
 
