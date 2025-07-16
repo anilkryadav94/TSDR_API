@@ -4,7 +4,9 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 from io import BytesIO
 
-import streamlit as st
+
+st.set_page_config(layout="wide")
+
 
 # Load usernames and passwords from Streamlit secrets
 AUTH_USERS = st.secrets["credentials"]
@@ -29,10 +31,10 @@ if not st.session_state.logged_in:
             st.error("❌ Invalid username or password")
 
 else:
-    st.success(f"✅ Welcome! Lets start fetching the bulk TSDR record")
+    st.success(f"✅ Welcome! Let start fetching publically available TM records from TSDR.")
     # 👉 Continue with rest of your app
 
-    st.title("USPTO Trademark Data via TSDR API")
+    st.title("USPTO Trademark Data")
 
     # 🔑 API Key Input
     api_key = st.secrets["API_KEY"]
