@@ -29,14 +29,9 @@ if not st.session_state.logged_in:
             st.error("❌ Invalid username or password")
 
 else:
-    st.success(f"✅ Welcome!")
+    st.success(f"✅ Welcome! Lets start fetching the bulk TSDR record")
     # 👉 Continue with rest of your app
-    # For example:
-    st.title("USPTO TSDR Data Tool")
-    # ... your original app code here ...
 
-
-    # Streamlit UI
     st.title("USPTO Trademark Data via TSDR API")
 
     # 🔑 API Key Input
