@@ -24,7 +24,7 @@ if not st.session_state.logged_in:
         if username in AUTH_USERS and AUTH_USERS[username] == password:
             st.session_state.logged_in = True
             st.success("✅ Login successful!")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("❌ Invalid username or password")
 
